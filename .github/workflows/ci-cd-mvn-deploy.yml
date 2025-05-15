@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
 
 env:
-  REPOSITORY: condition-template-client
+  REPOSITORY: hierarchy-commons-commons
   ACTOR: saman-core
 
 jobs:
@@ -29,4 +29,6 @@ jobs:
 
       - name: Deploy app
         run: |
-          ./mvnw -s ./settings.xml deploy -DskipTests
+          ./mvnw -s ./settings.xml package
+          ./mvnw -s ./settings.xml -pl model deploy -DskipTests
+          ./mvnw -s ./settings.xml -pl client deploy -DskipTests
