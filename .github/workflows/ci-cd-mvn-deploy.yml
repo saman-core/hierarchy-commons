@@ -27,8 +27,11 @@ jobs:
           base64 -d -i <<<$(echo $SETTINGS_XML) > settings.xml
           sed -i -e 's/OWNER/${{ env.ACTOR }}/g' -e 's/TOKEN/${{ env.TOKEN }}/g' ./settings.xml
 
+      - name: Build app
+        run: |
+          ./mvnw -s ./settings.xml install
+
       - name: Deploy app
         run: |
-          ./mvnw -s ./settings.xml package
           ./mvnw -s ./settings.xml -pl model deploy -DskipTests
           ./mvnw -s ./settings.xml -pl client deploy -DskipTests
