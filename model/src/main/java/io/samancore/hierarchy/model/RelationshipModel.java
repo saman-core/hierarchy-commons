@@ -2,7 +2,12 @@ package io.samancore.hierarchy.model;
 
 import java.util.Objects;
 
-public record RelationshipModel(String id, String name) {
+public record RelationshipModel(String id,
+                                String name,
+                                EntityModel source,
+                                EntityModel target,
+                                Cardinality cardinalitySource,
+                                Cardinality cardinalityTarget) {
 
     @Override
     public boolean equals(Object o) {

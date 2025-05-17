@@ -2,7 +2,10 @@ package io.samancore.hierarchy.model;
 
 import java.util.Objects;
 
-public record EntityModel(String id, String name) {
+public record EntityModel(String id,
+                          String name,
+                          String comment,
+                          StateType type) {
 
     @Override
     public boolean equals(Object o) {
