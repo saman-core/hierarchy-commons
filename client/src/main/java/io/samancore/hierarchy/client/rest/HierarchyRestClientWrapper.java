@@ -69,6 +69,6 @@ public class HierarchyRestClientWrapper implements HierarchyClient {
     }
 
     private String generateUrl(String moduleName) {
-        return urlPrefix.concat("hierarchy-").concat(moduleName).concat(urlSuffix);
+        return urlPrefix.concat(moduleName).concat("-hierarchy").concat(urlSuffix);
     }
 }
