@@ -3,7 +3,6 @@ on:
   workflow_dispatch:
 
 env:
-  REPOSITORY: hierarchy-commons-commons
   ACTOR: saman-core
 
 jobs:

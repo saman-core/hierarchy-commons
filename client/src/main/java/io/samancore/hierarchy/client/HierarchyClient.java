@@ -8,6 +8,10 @@ import java.util.Set;
 
 public interface HierarchyClient {
 
+    EntityModel getEntity(String moduleName, String entityId);
+
+    RelationshipModel getRelationship(String moduleName, String relationshipId);
+
     List<RelationshipModel> getRelationshipsFromEntity(String moduleName, String entityId);
 
     EntityModel getTargetEntity(String moduleName, String relationshipId);
